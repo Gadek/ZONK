@@ -1,7 +1,7 @@
 var cells = []
 var rows = 1;
 var cols = 3;
-var w = 55;
+var w = 100;
 var winning;
 var nextStep = false;
 var txt;
