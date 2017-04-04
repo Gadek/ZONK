@@ -10,7 +10,8 @@ var again;
 var on = true;
 var prob=0;
 var prev;
-var other
+var other;
+var secure = false;
 function setup() {
   createCanvas(cols*w+1,rows*w+1);
   txt = createP("Ile punktów: "+pkt+"___Ile prób: "+prob);
@@ -47,11 +48,15 @@ function mousePressed() {
         else uncover2(i);
         nextStep = true;
         cells[i].col = color(50,50,255)
-      } else if(i==winning || i==prev || i==other){
+        setTimeout(enabled,1000)
+      } else if((i==winning || i==prev || i==other) && secure){
         finish(i);
       }
     }
   }
+}
+function enabled() {
+  secure = true;
 }
 
 
@@ -65,6 +70,7 @@ function finish(x) {
 }
 
 function againa() {
+  secure = false;
   on = true;
   nextStep = false;
   winning = floor(random(cells.length));
