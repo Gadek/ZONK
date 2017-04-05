@@ -16,18 +16,16 @@ function index(x,y) {
 
 
 function uncover1(x) {
-  for(var i=0 ; i<cells.length ; i++) {
-    cells[i].col = 255;
-  }
   do {
     other = floor(random(cells.length))
   } while (other == winning)
-  cells[other].col = color(50,50,255);
+  for(var i=0 ; i<cells.length ; i++) {
+    if(i != other)cells[i].col = 255;
+  }
 }
 
 function uncover2(x) {
   for(var i=0 ; i<cells.length ; i++) {
-    cells[i].col = 255;
+    if(i != winning)cells[i].col = 255;
   }
-  cells[winning].col = color(50,50,255);
 }
