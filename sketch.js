@@ -1,5 +1,5 @@
 var cells = []
-var rows = 1;
+var rows = 10;
 var cols = 3;
 var w = 100;
 var winning;
