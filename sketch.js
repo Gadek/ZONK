@@ -60,6 +60,7 @@ function draw() {
 function changeRows() {
   rows = Number(r.value());
   resizeCanvas(cols*w+1,rows*w+1)
+  cells.splice(0,cells.length);
   for(var i=0 ; i<rows ; i++) {
     for(var j=0 ; j<cols ; j++) {
       cells.push(new Cell(j, i))
@@ -74,7 +75,7 @@ function changeRows() {
 function changeCols() {
   cols = Number(c.value());
   resizeCanvas(cols*w+1,rows*w+1)
-
+  cells.splice(0,cells.length);
   for(var i=0 ; i<rows ; i++) {
     for(var j=0 ; j<cols ; j++) {
       cells.push(new Cell(j, i))
